@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Image Map</title>
+    <link href="../public/style.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-black">
+    <img id="bodyImage" src="../img/human-body-front.png" usemap="#image-map" alt="Human Body">
+
+    <map name="image-map">
+        <area id="headArea" target="" alt="Head" title="Head" href="" coords="176,76,180,73,181,86,189,94,203,99,216,98,226,93,234,86,234,74,240,75,244,65,244,52,237,53,237,32,232,21,223,12,213,8,201,8,189,13,181,22,177,32,177,45,177,53,171,51,170,58,172,68" shape="poly">
+        <area id="neckArea" target="" alt="Neck" title="Neck" href="" coords="151,137,161,133,173,124,184,114,184,90,192,96,201,99,212,99,223,96,231,90,231,114,246,128,263,138,246,145,225,150,214,151,207,157,199,150,184,149,170,146" shape="poly">
+        <area id="chestArea" target="" alt="Chest" title="Chest" href="" coords="198,150,207,157,214,151,243,149,267,152,275,157,280,166,280,178,275,198,266,214,253,224,230,228,207,225,184,228,163,225,149,215,140,197,134,171,136,162,143,154,155,151,175,149" shape="poly">
+    </map>
+
+    <script>
+        const bodyImage = document.getElementById('bodyImage');
+        const headArea = document.getElementById('headArea');
+        const neckArea = document.getElementById('neckArea');
+        const chestArea = document.getElementById('chestArea');
+
+        // Paths to the highlighted images
+        const highlightedHeadImage = "../img/front-head-selected.png";
+        const highlightedNeckImage = "../img/front-neck-selected.png";
+        const highlightedChestImage = "../img/front-chest-selected.png";
+
+        // Path to the default image
+        const defaultImage = "../img/human-body-front.png";
+
+        // Preload the highlighted images
+        const preloadHeadImage = new Image();
+        const preloadNeckImage = new Image();
+        const preloadChestImage = new Image();
+        preloadHeadImage.src = highlightedHeadImage;
+        preloadNeckImage.src = highlightedNeckImage;
+        preloadChestImage.src = highlightedChestImage;
+
+        // Function to change the image on hover
+        function changeImage(newSrc) {
+            bodyImage.src = newSrc;
+        }
+
+        // Add event listeners for hover on head area
+        headArea.addEventListener('mouseenter', () => {
+            changeImage(highlightedHeadImage);
+        });
+        headArea.addEventListener('mouseleave', () => {
+            changeImage(defaultImage);
+        });
+
+        // Add event listeners for hover on neck area
+        neckArea.addEventListener('mouseenter', () => {
+            changeImage(highlightedNeckImage);
+        });
+        neckArea.addEventListener('mouseleave', () => {
+            changeImage(defaultImage);
+        });
+
+        // Add event listeners for hover on chest area
+        chestArea.addEventListener('mouseenter', () => {
+            changeImage(highlightedChestImage);
+        });
+        chestArea.addEventListener('mouseleave', () => {
+            changeImage(defaultImage);
+        });
+    </script>
+</body>
+</html>
