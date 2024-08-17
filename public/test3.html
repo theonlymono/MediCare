@@ -8,10 +8,10 @@
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
 <body class="bg-white">
-    <div id="frontView">
-        <img id="frontBodyImage" src="../img/human-body-front.png" usemap="#image-map" alt="Human Body">
+    <div id="frontView" class="block">
+        <img id="frontBodyImage" src="../img/human-body-front.png" usemap="#front-image-map" alt="Human Body">
 
-        <map name="image-map">
+        <map name="front-image-map">
             <area id="headArea" target="" alt="Head" title="Head" href="" coords="176,76,180,73,181,86,189,94,203,99,216,98,226,93,234,86,234,74,240,75,244,65,244,52,237,53,237,32,232,21,223,12,213,8,201,8,189,13,181,22,177,32,177,45,177,53,171,51,170,58,172,68" shape="poly">
             <area id="neckArea" target="" alt="Neck" title="Neck" href="" coords="151,137,161,133,173,124,184,114,184,90,192,96,201,99,212,99,223,96,231,90,231,114,246,128,263,138,246,145,225,150,214,151,207,157,199,150,184,149,170,146" shape="poly">
             <area id="chestArea" target="" alt="Chest" title="Chest" href="" coords="198,150,207,157,214,151,243,149,267,152,275,157,280,166,280,178,275,198,266,214,253,224,230,228,207,225,184,228,163,225,149,215,140,197,134,171,136,162,143,154,155,151,175,149" shape="poly">
@@ -41,10 +41,10 @@
         </map>
     </div>
     
-    <div id="backView" style="display: none;">
-        <img id="backBodyImage" src="../img/human-body-back.png" usemap="#image-map" alt="Human Body">
+    <div id="backView" class="hidden" style="display: none;">
+        <img id="backBodyImage" src="../img/human-body-back.png" usemap="#back-image-map" alt="Human Body">
         
-        <map name="image-map">
+        <map name="back-image-map">
             <area id="backHeadArea" target="" alt="Head" title="Head" href="" coords="174,74,170,57,171,51,177,51,177,38,180,26,187,16,194,11,208,8,219,11,231,18,238,34,238,51,245,51,245,61,241,75,234,76,225,78,212,81,203,81,191,79,180,76,174,74" shape="poly">
             <area id="backNeckArea" target="" alt="Neck" title="Neck" href="" coords="181,77,184,87,184,113,194,121,203,125,212,125,221,121,231,113,232,89,233,77,207,82" shape="poly">
             <area id="backBackArea" target="" alt="Back" title="Back" href="" coords="185,114,167,130,149,138,154,146,137,152,129,161,128,192,131,210,137,238,145,268,270,268,281,225,287,203,289,177,285,158,275,150,261,146,266,137,252,132,230,114,221,122,212,126,203,125,193,121" shape="poly">
@@ -76,7 +76,7 @@
         </map>
     </div>
 
-    <button id="toggleViewButton">Switch to Back View</button>
+    <button id="toggleViewButton" class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600">Switch to Back View</button>
 
     <!-- Code for Front View of Human Body -->
     <!-- Hover Effect -->
@@ -362,44 +362,114 @@
     <script>
         const backBodyImage = document.getElementById('backBodyImage');
         const backHeadArea = document.getElementById('backHeadArea');
+        const backNeckArea = document.getElementById('backNeckArea');
+        const backBackArea = document.getElementById('backBackArea');
+        const backLoinArea = document.getElementById('backLoinArea');
+        const backButtocksArea = document.getElementById('backButtocksArea');
+        const backHamstringArea = document.getElementById('backHamstringArea');
+        const backLeftKneeArea = document.getElementById('backLeftKneeArea');
+        const backRightKneeArea = document.getElementById('backRightKneeArea');
+        const backLeftCalveArea = document.getElementById('backLeftCalveArea');
+        const backRightCalveArea = document.getElementById('backRightCalveArea');
+        const backLeftAnkleArea = document.getElementById('backLeftAnkleArea');
+        const backRightAnkleArea = document.getElementById('backRightAnkleArea');
+        const backLeftSoleArea = document.getElementById('backLeftSoleArea');
+        const backRightSoleArea = document.getElementById('backRightSoleArea');
+        const backLeftFootArea = document.getElementById('backLeftFootArea');
+        const backRightFootArea = document.getElementById('backRightFootArea');
+        const backLeftShoulderArea = document.getElementById('backLeftShoulderArea');
+        const backRightShoulderArea = document.getElementById('backRightShoulderArea');
+        const backLeftArmArea = document.getElementById('backLeftArmArea');
+        const backRightArmArea = document.getElementById('backRightArmArea');
+        const backLeftElbowArea = document.getElementById('backLeftElbowArea');
+        const backRightElbowArea = document.getElementById('backRightElbowArea');
+        const backLeftForeArmArea = document.getElementById('backLeftForeArmArea');
+        const backRightForeArmArea = document.getElementById('backRightForeArmArea');
+        const backLeftWristArea = document.getElementById('backLeftWristArea');
+        const backRightWristArea = document.getElementById('backRightWristArea');
+        const backLeftHandArea = document.getElementById('backLeftHandArea');
+        const backRightHandArea = document.getElementById('backRightHandArea');
+
         // Paths to the highlighted images
         const highlightedBackHeadImage = "../img/back-head-selected.png";
+        const highlightedBackNeckImage = "../img/back-neck-selected.png";
+        const highlightedBackBackImage = "../img/back-back-selected.png";
+        const highlightedBackLoinImage = "../img/back-loin-selected.png";
+        const highlightedBackButtocksImage = "../img/back-buttocks-selected.png";
+        const highlightedBackHamstringImage = "../img/back-hamstrings-selected.png";
+        const highlightedBackKneesImage = "../img/back-knees-selected.png";
+        const highlightedBackCalvesImage = "../img/back-calves-selected.png";
+        const highlightedBackAnklesImage = "../img/back-ankles-selected.png";
+        const highlightedBackSolesImage = "../img/back-soles-selected.png";
+        const highlightedBackFeetImage = "../img/back-feet-selected.png";
+        const highlightedBackShouldersImage = "../img/back-shoulders-selected.png";
+        const highlightedBackArmsImage = "../img/back-arms-selected.png";
+        const highlightedBackElbowsImage = "../img/back-elbows-selected.png";
+        const highlightedBackForeArmsImage = "../img/back-fore-arms-selected.png";
+        const highlightedBackWristsImage = "../img/back-wrists-selected.png";
+        const highlightedBackHandsImage = "../img/back-hands-selected.png";
 
         // Path to the default image
-        const defaultImage2 = "../img/human-body-back.png";
+        const defaultBackImage = "../img/human-body-back.png";
 
-        // Preload the highlighted images
-        const preloadBackHeadImage = new Image();
-        preloadBackHeadImage.src = highlightedBackHeadImage;
+        function setHoverEffects(area, highlightedImage) {
+            area.addEventListener('mouseover', function() {
+                backBodyImage.src = highlightedImage;
+            });
+            area.addEventListener('mouseout', function() {
+                backBodyImage.src = defaultBackImage;
+            });
+        }
 
-        // Add event listeners for the hover on back head area
-        backHeadArea.addEventListener('mouseenter', () => {
-            changeImage(highlightedBackHeadImage);
-        })
-        backHeadArea.addEventListener('mouseleave', () => {
-            changeImage(defaultImage2);
-        });
-
-
+        // Set hover effects for back view
+        setHoverEffects(backHeadArea, highlightedBackHeadImage);
+        setHoverEffects(backNeckArea, highlightedBackNeckImage);
+        setHoverEffects(backBackArea, highlightedBackBackImage);
+        setHoverEffects(backLoinArea, highlightedBackLoinImage);
+        setHoverEffects(backButtocksArea, highlightedBackButtocksImage);
+        setHoverEffects(backHamstringArea, highlightedBackHamstringImage);
+        setHoverEffects(backLeftKneeArea, highlightedBackKneesImage);
+        setHoverEffects(backRightKneeArea, highlightedBackKneesImage);
+        setHoverEffects(backLeftCalveArea, highlightedBackCalvesImage);
+        setHoverEffects(backRightCalveArea, highlightedBackCalvesImage);
+        setHoverEffects(backLeftAnkleArea, highlightedBackAnklesImage);
+        setHoverEffects(backRightAnkleArea, highlightedBackAnklesImage);
+        setHoverEffects(backLeftSoleArea, highlightedBackSolesImage);
+        setHoverEffects(backRightSoleArea, highlightedBackSolesImage);
+        setHoverEffects(backLeftFootArea, highlightedBackFeetImage);
+        setHoverEffects(backRightFootArea, highlightedBackFeetImage);
+        setHoverEffects(backLeftShoulderArea, highlightedBackShouldersImage);
+        setHoverEffects(backRightShoulderArea, highlightedBackShouldersImage);
+        setHoverEffects(backLeftArmArea, highlightedBackArmsImage);
+        setHoverEffects(backRightArmArea, highlightedBackArmsImage);
+        setHoverEffects(backLeftElbowArea, highlightedBackElbowsImage);
+        setHoverEffects(backRightElbowArea, highlightedBackElbowsImage);
+        setHoverEffects(backLeftForeArmArea, highlightedBackForeArmsImage);
+        setHoverEffects(backRightForeArmArea, highlightedBackForeArmsImage);
+        setHoverEffects(backLeftWristArea, highlightedBackWristsImage);
+        setHoverEffects(backRightWristArea, highlightedBackWristsImage);
+        setHoverEffects(backLeftHandArea, highlightedBackHandsImage);
+        setHoverEffects(backRightHandArea, highlightedBackHandsImage);
     </script>
+
     
     <!-- Toggle Button >>> Switching Sides -->
     <script>
-    document.getElementById('toggleViewButton').addEventListener('click', function() {
-    const frontView = document.getElementById('frontView');
-    const backView = document.getElementById('backView');
-    
-        if (frontView.style.display === 'none') {
-            frontView.style.display = 'block';
-            backView.style.display = 'none';
-            this.textContent = 'Switch to Back View';
-        } else {
-            frontView.style.display = 'none';
-            backView.style.display = 'block';
-            this.textContent = 'Switch to Front View';
-        }
-    });
-
+        document.getElementById('toggleViewButton').addEventListener('click', function() {
+            const frontView = document.getElementById('frontView');
+            const backView = document.getElementById('backView');
+            
+            if (frontView.style.display === 'none' || frontView.style.display === '') {
+                frontView.style.display = 'block';
+                backView.style.display = 'none';
+                this.textContent = 'Switch to Back View'; // Update button text
+            } else {
+                frontView.style.display = 'none';
+                backView.style.display = 'block';
+                this.textContent = 'Switch to Front View'; // Update button text
+            }
+        });
     </script>
+    
 </body>
 </html>

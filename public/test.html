@@ -26,6 +26,16 @@
         <area id="rightAnkleArea" target="" alt="Ankles" title="Ankles" href="" coords="237,762,240,777,246,774,252,773,259,774,267,778,269,768,268,759,259,753,248,752,240,755" shape="poly">
         <area id="leftFootArea" target="" alt="Feet" title="Feet" href="" coords="131,808,137,814,164,819,175,808,176,799,174,777,166,773,161,772,154,773,149,775,139,790,131,802" shape="poly">
         <area id="rightFootArea" target="" alt="Feet" title="Feet" href="" coords="240,778,246,775,252,774,259,775,267,779,274,789,283,801,283,807,280,814,251,819,240,810,238,799,240,787" shape="poly">
+        <area id="leftShoulderArea" target="" alt="Shoulders" title="Shoulders" href="" coords="180,149,150,137,138,136,128,138,119,142,110,149,104,159,98,173,97,186,97,200,97,215,128,188,135,180,134,170,135,164,139,158,146,153,159,150" shape="poly">
+        <area id="rightShoulderArea" target="" alt="Shoulders" title="Shoulders" href="" coords="235,149,259,139,275,136,290,139,302,147,311,159,316,169,318,181,318,196,318,206,317,215,293,193,280,180,280,165,275,157,266,152,249,150" shape="poly">
+        <area id="leftArmArea" target="" alt="Arms" title="Arms" href="" coords="97,215,135,181,138,195,137,210,136,224,134,235,127,248,122,259,119,265,115,278,105,282,90,293,91,276,92,235" shape="poly">
+        <area id="rightArmArea" target="" alt="Arms" title="Arms" href="" coords="279,180,318,216,323,232,324,250,323,262,323,276,325,294,311,283,299,277,294,261,280,233,277,205" shape="poly">
+        <area id="leftForeArmArea" target="" alt="ForeArms" title="ForeArms" href="" coords="90,256,76,275,68,294,63,323,58,351,52,377,76,380,85,358,94,339,115,294,115,278,101,286,89,295,91,274" shape="poly">
+        <area id="rightForeArmArea" target="" alt="ForeArms" title="ForeArms" href="" coords="324,256,333,268,340,280,346,297,351,314,354,336,357,351,363,377,339,380,332,365,306,306,300,292,300,278,311,283,325,295,323,275" shape="poly">
+        <area id="leftWristArea" target="" alt="Wrists" title="Wrists" href="" coords="52,377,74,380,73,395,45,390" shape="poly">
+        <area id="rightWristArea" target="" alt="Wrists" title="Wrists" href="" coords="339,380,362,377,369,389,342,394" shape="poly">
+        <area id="leftHandArea" target="" alt="Hands" title="Hands" href="" coords="45,390,72,395,72,406,69,419,65,434,64,461,61,463,59,462,57,438,54,444,45,473,42,472,41,467,46,438,43,437,30,469,25,471,24,468,36,432,18,458,13,460,11,457,26,428,29,414,16,426,10,428,5,427,17,412,27,399,39,393" shape="poly">
+        <area id="rightHandArea" target="" alt="Hands" title="Hands" href="" coords="342,395,368,390,375,393,385,397,395,407,400,416,409,427,406,429,398,425,387,415,389,429,404,457,400,460,392,451,381,434,379,436,386,456,390,469,388,471,381,464,371,437,368,438,373,471,370,473,366,464,361,443,359,438,356,439,356,451,355,463,352,463,350,459,349,431,344,415" shape="poly">
     </map>
 
     <script>
@@ -44,6 +54,16 @@
         const rightAnkleArea = document.getElementById('rightAnkleArea');
         const leftFootArea = document.getElementById('leftFootArea');
         const rightFootArea = document.getElementById('rightFootArea');
+        const leftShoulderArea = document.getElementById('leftShoulderArea');
+        const rightShoulderArea = document.getElementById('rightShoulderArea');
+        const leftArmArea = document.getElementById('leftArmArea');
+        const rightArmArea = document.getElementById('rightArmArea');
+        const leftForeArmArea = document.getElementById('leftForeArmArea');
+        const rightForeArmArea = document.getElementById('rightForeArmArea');
+        const leftWristArea = document.getElementById('leftWristArea');
+        const rightWristArea = document.getElementById('rightWristArea');
+        const leftHandArea = document.getElementById('leftHandArea');
+        const rightHandArea = document.getElementById('rightHandArea');
 
         // Paths to the highlighted images
         const highlightedHeadImage = "../img/front-head-selected.png";
@@ -56,6 +76,11 @@
         const highlightedLegsImage = "../img/front-legs-selected.png";
         const highlightedAnklesImage = "../img/front-ankles-selected.png";
         const highlightedFeetImage = "../img/front-feet-selected.png";
+        const highlightedShouldersImage = "../img/front-shoulders-selected.png";
+        const highlightedArmsImage = "../img/front-arms-selected.png";
+        const highlightedForeArmsImage = "../img/front-fore-arms-selected.png";
+        const highlightedWristsImage = "../img/front-wrists-selected.png";
+        const highlightedHandsImage = "../img/front-hands-selected.png";
 
         // Path to the default image
         const defaultImage = "../img/human-body-front.png";
@@ -71,6 +96,11 @@
         const preloadLegsImage = new Image();
         const preloadAnklesImage = new Image();
         const preloadFeetImage = new Image();
+        const preloadShouldersImage = new Image();
+        const preloadArmsImage = new Image();
+        const preloadForeArmsImage = new Image();
+        const preloadWristsImage = new Image();
+        const preloadHandsImage = new Image();
         preloadHeadImage.src = highlightedHeadImage;
         preloadNeckImage.src = highlightedNeckImage;
         preloadChestImage.src = highlightedChestImage;
@@ -81,6 +111,11 @@
         preloadLegsImage.src = highlightedLegsImage;
         preloadAnklesImage.src = highlightedAnklesImage;
         preloadFeetImage.src = highlightedFeetImage;
+        preloadShouldersImage.src = highlightedShouldersImage;
+        preloadArmsImage.src = highlightedArmsImage;
+        preloadForeArmsImage.src = highlightedForeArmsImage;
+        preloadWristsImage.src = highlightedWristsImage;
+        preloadHandsImage.src = highlightedHandsImage;
 
         // Function to change the image on hover
         function changeImage(newSrc) {
@@ -198,6 +233,87 @@
         rightFootArea.addEventListener('mouseleave', () => {
             changeImage(defaultImage);
         });
+        
+        // Add event listeners for hover on shoulders area
+        leftShoulderArea.addEventListener('mouseenter', () => {
+            changeImage(highlightedShouldersImage);
+        });
+        leftShoulderArea.addEventListener('mouseleave', () => {
+            changeImage(defaultImage);
+        });
+
+        // Add event listeners for hover on shoulders area
+        rightShoulderArea.addEventListener('mouseenter', () => {
+            changeImage(highlightedShouldersImage);
+        });
+        rightShoulderArea.addEventListener('mouseleave', () => {
+            changeImage(defaultImage);
+        });
+
+        // Add event listeners for hover on arms area
+        leftArmArea.addEventListener('mouseenter', () => {
+            changeImage(highlightedArmsImage);
+        });
+        leftArmArea.addEventListener('mouseleave', () => {
+            changeImage(defaultImage);
+        });
+
+        // Add event listeners for hover on arms area
+        rightArmArea.addEventListener('mouseenter', () => {
+            changeImage(highlightedArmsImage);
+        });
+        rightArmArea.addEventListener('mouseleave', () => {
+            changeImage(defaultImage);
+        });
+
+        // Add event listeners for hover on fore arms area
+        leftForeArmArea.addEventListener('mouseenter', () => {
+            changeImage(highlightedForeArmsImage);
+        });
+        leftForeArmArea.addEventListener('mouseleave', () => {
+            changeImage(defaultImage);
+        });
+
+        // Add event listeners for hover on fore arms area
+        rightForeArmArea.addEventListener('mouseenter', () => {
+            changeImage(highlightedForeArmsImage);
+        });
+        rightForeArmArea.addEventListener('mouseleave', () => {
+            changeImage(defaultImage);
+        });
+
+        // Add event listeners for hover on wrists area
+        leftWristArea.addEventListener('mouseenter', () => {
+            changeImage(highlightedWristsImage);
+        });
+        leftWristArea.addEventListener('mouseleave', () => {
+            changeImage(defaultImage);
+        });
+
+        // Add event listeners for hover on wrists area
+        rightWristArea.addEventListener('mouseenter', () => {
+            changeImage(highlightedWristsImage);
+        });
+        rightWristArea.addEventListener('mouseleave', () => {
+            changeImage(defaultImage);
+        });
+
+        // Add event listeners for hover on hands area
+        leftHandArea.addEventListener('mouseenter', () => {
+            changeImage(highlightedHandsImage);
+        });
+        leftHandArea.addEventListener('mouseleave', () => {
+            changeImage(defaultImage);
+        });
+
+        // Add event listeners for hover on hands area
+        rightHandArea.addEventListener('mouseenter', () => {
+            changeImage(highlightedHandsImage);
+        });
+        rightHandArea.addEventListener('mouseleave', () => {
+            changeImage(defaultImage);
+        });
+
 
     </script>
 </body>
